@@ -1,4 +1,4 @@
-# Project Management SaaS — v3.0
+# Project Management SaaS
 
 A full-stack SaaS platform with subscription billing, team collaboration,
 task management, workflow automation, and analytics.
@@ -85,48 +85,6 @@ Endpoint: `GET /projects/{id}/tasks/grouped`
 ### Module 6 — Task Activity History
 Every task action (create, update, status change, assignment, delete)
 is logged with old and new values in JSON.
-
-Endpoint: `GET /tasks/{id}/activities`
-
----
-
-## Database Tables Added (v3.0)
-
-### tasks
-| Column | Type | Notes |
-|---|---|---|
-| id | INT PK | |
-| project_id | INT FK | → projects.id CASCADE |
-| title | VARCHAR(255) | |
-| description | TEXT | nullable |
-| status | VARCHAR(50) | todo/in_progress/done/blocked |
-| priority | VARCHAR(50) | low/medium/high |
-| assigned_to | INT FK | → users.id SET NULL |
-| created_by | INT FK | → users.id CASCADE |
-| due_date | DATETIME | nullable, indexed |
-| completed_at | DATETIME | auto-set when status=done |
-| created_at | DATETIME | auto |
-| updated_at | DATETIME | auto-updated |
-
-### task_activities
-| Column | Type | Notes |
-|---|---|---|
-| id | INT PK | |
-| task_id | INT FK | → tasks.id CASCADE |
-| user_id | INT FK | → users.id CASCADE |
-| action | VARCHAR(100) | created/updated/status_changed/etc |
-| old_value_json | TEXT | JSON string of before state |
-| new_value_json | TEXT | JSON string of after state |
-| created_at | DATETIME | indexed |
-
-### saved_filters
-| Column | Type | Notes |
-|---|---|---|
-| id | INT PK | |
-| user_id | INT FK | → users.id CASCADE |
-| name | VARCHAR(255) | |
-| filters_json | TEXT | JSON string of filter config |
-| created_at | DATETIME | |
 
 ---
 
