@@ -1,0 +1,59 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+backend/.env
+.env
+venv/
+__pycache__/
+*.pyc
+
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+# Python compiled files — never commit these
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Environment variables — contains secrets
+.env
+*.env
+!.env.example
+!.env.docker
+
+# Node.js
+node_modules/
+dist/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+.idea/
+
+# Alembic — commit migration files but not compiled versions
+alembic/versions/__pycache__/
+backend/.env
+.env
